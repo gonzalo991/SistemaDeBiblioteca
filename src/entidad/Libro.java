@@ -9,10 +9,7 @@ public class Libro {
     public Libro(String titulo, String genero, String autor, boolean disponible) {
         this.titulo = titulo;
         this.genero = genero;
-        if(!autor.isBlank())
-            this.autor = new Autor(autor);
-        else
-            this.autor = new Autor("Anónimo");
+        this.autor = new Autor(autor);
         this.disponible = disponible;
     }
 
@@ -44,38 +41,25 @@ public class Libro {
         return disponible;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
 
     public void marcarComoPrestado(){
-        if(this.disponible) {
             this.disponible = false;
             System.out.println("Libro prestado con éxito.");
-            return;
-        }
-        System.out.println("El libro ya fue prestado.");
     }
 
     public void marcarComoDisponible(){
-        if(!this.disponible){
             this.disponible = true;
             System.out.println("Libro devuelto.");
-            return;
-        }
-        System.out.println("El libro está disponible.");
     }
 
     public void mostrarInfoLibro(){
-        String datos = String.format("""
-                Libro: {
-                \tTítulo: %s,
-                \tGénero: %s,
-                \tAutor: %s
-                \tDisponible: %b
-                }
-                """,this.titulo, this.genero,
-                this.autor, this.disponible);
-        System.out.println(datos);
+            System.out.printf("""
+            Libro: {
+            \tTítulo: %s,
+            \tGénero: %s,
+            \tAutor: %s,
+            \tDisponible: %b
+            }
+            """, this.titulo, this.genero, this.autor, this.disponible);
     }
 }

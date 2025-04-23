@@ -17,10 +17,6 @@ public class Autor {
 
     @Override
     public String toString() {
-        return String.format("""
-                {
-                \tNombre: %s
-                }
-                """,this.nombre);
+        return this.nombre;
     }
 }

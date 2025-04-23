@@ -6,18 +6,9 @@ public abstract class Persona {
     protected String email;
 
     public Persona(String nombre, String dni, String email){
-        if(nombre.isBlank())
-            this.nombre = nombre;
-        else
-            System.out.println("Ingrese el nombre");
-        if(dni.isBlank())
-            this.dni = dni;
-        else
-            System.out.println("Debe ingresar el dni");
-        if(email.isBlank())
-            this.email = email;
-        else
-            System.out.println("Ingrese el email");
+        this.nombre = nombre;
+        this.dni = dni;
+        this.email = email;
     }
 
     public String getNombre() {

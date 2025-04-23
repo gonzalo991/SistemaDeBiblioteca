@@ -51,6 +51,22 @@ public class Prestamo implements IPrestamo {
         return fechaDeDevolucion;
     }
 
+    public void mostrarInfo(){
+        String data = String.format(
+                """
+                Prestamo: {
+                \tUsuario: %s
+                \tLibro: %s,
+                \tFecha del préstamo: %s,
+                \tFecha de devolución: %s
+                },
+                """, this.usuario.getNombre(),
+                this.libro.getTitulo(), this.fechaDePrestamo,
+                this.fechaDeDevolucion
+        );
+        System.out.println(data);
+    }
+
     @Override
     public void marcarDevuelto(String fecha) {
         try {

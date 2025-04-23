@@ -2,21 +2,22 @@ package entidad;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Usuario extends Persona {
-    private List<Prestamo> prestamos;
+    private final List<Prestamo> prestamos;
 
     public Usuario(String nombre, String dni, String email) {
         super(nombre, dni, email);
         this.prestamos = new ArrayList<>();
     }
 
-    public List<Prestamo> getPrestamos() {
-        return prestamos;
+    public void mostrarPrestamos() {
+        prestamos.forEach(Prestamo::mostrarInfo);
     }
 
-    public void setPrestamos(List<Prestamo> prestamos) {
-        this.prestamos = prestamos;
+    public void setPrestamos(Prestamo prestamo) {
+        this.prestamos.add(prestamo);
     }
 
     @Override
